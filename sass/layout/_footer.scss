@@ -1,0 +1,108 @@
+// ======================================================
+// Layout :: Footer
+// ======================================================
+.footer-top{
+  background: #313131;
+  padding: 35px 0 65px 0;
+  .txt-main-foot{
+    @include setup-text(13px,700);
+    margin-top: 0;
+    margin-bottom: 30px;
+    @include transform-up;
+    @include tablet{
+      line-height: 22px;
+    }
+    @include mobile{
+      margin-bottom: 20px;
+    }
+  }
+  ul.info-company{
+    li{
+      margin-bottom: 8px;
+      img{
+        margin-right: 9px;
+      }
+      span{
+        @include setup-text(13px,700);
+      }
+    }
+    @include mobile{
+      margin-bottom: 25px;
+    }
+  }
+  ul.social{
+    li{
+      margin-bottom: 13px;
+      a{
+        @include setup-text(13px,400);
+        margin-left: 15px;
+      }
+    }
+  }
+  .if-map{
+    width: 100%;
+  }
+  @include tablet{
+    padding-bottom: 35px;
+    .name-company{
+      margin-bottom: 20px;
+    }
+    .txt-map{
+      margin-bottom: 12px;
+    }
+  }
+  @include mobile{
+    padding: 25px 0;
+  }
+}
+.footer-bot{
+  background: #1f1f1f;
+  .license{
+    @include setup-text(12px,400);
+    padding: 15px 0;
+    a{
+      color: #47d4ff;
+    }
+  }
+  .statiscial{
+    @include setup-text(12px,400);
+    padding: 15px 0;
+    img{
+      margin-right: 6px;
+    }
+  }
+  @include tablet-horizontal{
+    text-align: center;
+    .license{
+      float: none!important;
+      padding-bottom: 0;
+    }
+    .statiscial{
+      float: none!important;
+    }
+  }
+}
+#back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 31px;
+  height: 31px;
+  background: $bg-red;
+  color: $cl-white;
+  text-align: center;
+  line-height: 31px;
+  font-size: 18px;
+  font-weight: bold;
+  background-size: 100% 100%;
+  display: none;
+  z-index: 100;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  &:hover{
+    background: rgba(231, 39, 45, 0.788235294117647);
+  }
+}
