@@ -27,7 +27,6 @@ $( document ).ready(function() {
 
     var html = $('html, body'),
         navmenu = $('.menu'),
-        // showbaveadmin = $('.bave_user_menu'),
         navToggle = $('.nav-toggle'),
         navDropdownToggle = $('.has-dropdown'),
         overlay = $("<div class='overlay'></div> ");
@@ -38,7 +37,6 @@ $( document ).ready(function() {
         e.preventDefault();
         $this.toggleClass('is-active');
         navmenu.toggleClass('is-visible');
-        // showbaveadmin.toggleClass('is-visible');
         html.toggleClass('nav-open');
     });
 

@@ -203,19 +203,19 @@
 
 //begin menumb
 .nav-toggle {
-  line-height: 1;
+  position: fixed;
   display: inline-block;
-  padding: 2px;
-  border: 0;
+  top: 4px;
   right: 5px;
-  background: transparent;
   width: 40px;
   height: 50px;
-  position: fixed;
+  background: transparent;
+  padding: 2px;
+  border: 0;
   z-index: 99;
   outline: none;
   visibility: hidden;
-  top: 4px;
+  line-height: 1;
   .icon-menu {
     position: relative;
     width: 23px;
