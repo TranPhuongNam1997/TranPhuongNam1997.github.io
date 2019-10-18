@@ -31,9 +31,6 @@
   font-weight: $fw;
   color: $cl-white;
 }
-@mixin transform-up(){
-  text-transform: uppercase;
-}
 @mixin mb-50(){
   margin-bottom: 50px;
 }
@@ -48,15 +45,6 @@
   display: block;
   padding-bottom: $pdb;
 }
-@mixin ff-roboto(){
-  font-family: 'Roboto';
-}
-@mixin ff-uvn(){
-  font-family: 'UVN Hong Ha Hep';
-}
-@mixin ff-utm(){
-  font-family: 'UTM-Alter-Gothic';
-}
-@mixin ff-svn(){
-  font-family: 'SVN-Anastasia';
+@mixin ff-os(){
+  font-family: 'Open Sans';
 }

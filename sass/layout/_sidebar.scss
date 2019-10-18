@@ -1,468 +1,841 @@
 // ======================================================
 // Layout :: Sidebar
 // ======================================================
+.icon-preeminen{
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
 
-.st-invitation{
-  padding-bottom: 14px;
-  .services-block{
-    margin-bottom: 26px;
-    .box-top-element{
-      background: $bg-red;
-      padding: 7px 12px;
-
-      img{
-        display: inline-block;
-        padding-right: 11px;
-        vertical-align: baseline;
-      }
-      h3{
-        display: inline-block;
-        @include setup-text(24px,700);
-        @include ff-uvn;
-        margin: 0;
-      }
-      @include mobile-horizontal{
-        h3{
-          font-size: 20px;
+.login-wrap{
+  position: relative;
+  height: 100vh;
+  background: url("../images/banner-login.jpg") no-repeat center center;
+  background-size: cover;
+  .banner{
+    height: 100vh;
+    .form-login-wrap{
+      position: relative;
+      height: 100vh;
+      z-index: 9;
+      .form-login{
+        position: absolute;
+        top: 22%;
+        right: 0;
+        width: 429px;
+        height: 550px;
+        padding: 49px;
+        background: $bg-smoke;
+        //transform: translateY(-50%);
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        @include tablet-horizontal{
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          animation-name: none;
         }
-      }
-    }
-    .invitation-element{
-      a{
-        display: block;
-        overflow: hidden;
-        position: relative;
-        &:before{
-          @include resize-before(68%);
+        @include mobile{
+          width: 100%;
+          height: 500px;
+          padding: 30px;
+          .logo{
+            h1{
+              margin-bottom: 30px;
+            }
+          }
         }
-        img{
-          @include resize-img;
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -o-transition: all 0.4s;
-          transition: all 0.4s;
-          &:hover{
-            transform: scale(1.1);
-            opacity: 0.8;
-            -webkit-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-            -o-transition: all 0.4s;
-            transition: all 0.4s;
+        .logo{
+          h1{
+            margin: 0 0 37px;
+          }
+        }
+        .txt-system{
+          color: $cl-black;
+        }
+        .txt-auction{
+          color: $cl-blue;
+          font-size: 25px;
+          text-transform: uppercase;
+          line-height: 29px;
+          margin-bottom: 34px;
+        }
+        .form-login-block{
+          .group-ac{
+            margin-bottom: 12px;
+            label{
+              margin-bottom: 9px;
+              font-size: 12px;
+              line-height: 14px;
+              font-weight: 400;
+            }
+            .enter-account{
+              position: relative;
+              input{
+                display: block;
+                width: 100%;
+                height: 49px;
+                border: none;
+                padding: 0 50px;
+                border-radius: 6px;
+                -moz-border-radius: 6px;
+                -webkit-border-radius: 6px;
+                -ms-border-radius: 6px;
+                -o-border-radius: 6px;
+              }
+              svg{
+                position: absolute;
+                top: 17px;
+                left: 25px;
+              }
+            }
+          }
+          .forgot-btnlogin{
+            margin-top: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include mobile{
+              display: block;
+              .forgot-password{
+                display: block;
+                margin-bottom: 11px;
+              }
+            }
+            .forgot-password{
+              &:hover{
+                color: $cl-blue;
+                text-decoration: underline;
+              }
+            }
+            .btn-login{
+              width: 164px;
+              height: 49px;
+              line-height: 49px;
+              background: $bg-blue;
+              border: none;
+              color: $cl-white;
+              border-radius: 6px;
+              -moz-border-radius: 6px;
+              -webkit-border-radius: 6px;
+              -ms-border-radius: 6px;
+              -o-border-radius: 6px;
+            }
           }
         }
       }
-      p.txt-intro-invitation{
-        margin-top: 16px;
-        font-size: 13px;
-      }
     }
+  }
+  .bg-black-banner{
+    position: absolute;
+    background: #000;
+    opacity: 0.45;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 }
-//end st-invitation
-.st-restaurant-menu{
-  background: url("../images/bg-menu.png") no-repeat;
-  background-size: cover;
-  h2.title-home{
-    background-image: url("../images/bg-line-light.png");
-    color: $cl-white;
+
+//end login-wrap
+
+.section-auction-info{
+  padding-bottom: 29px;
+  @include mobile{
+    padding-bottom: 10px;
+    .col-pc-6{
+      width: 100%;
+    }
   }
-  .product-block{
-    margin-bottom: 30px;
-    .bd-around-img{
-      border: 4px solid $cl-white;
-      a{
-        display: block;
-        position: relative;
-        &:before{
-          @include resize-before(60%);
-        }
-        img{
-          @include resize-img;
-        }
-      }
-    }
-    .name-product{
-      margin-bottom: 7px;
-      a{
-        padding-top: 26px;
-        display: block;
-        @include setup-text(13px,700);
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        &:hover{
-          color: $cl-yl;
-        }
-      }
-      @include mobile-horizontal{
-        a{
-          padding-top: 15px;
-        }
-      }
-    }
-    .product-price{
-      text-align: center;
-      color: $cl-white;
-      margin-bottom: 30px;
-      @include mobile-horizontal{
-        margin-bottom: 10px;
-      }
-    }
-    .add-cart-wrap{
-      a{
-        display: block;
-        margin: auto;
-        text-align: center;
-        .add-cart-block{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          .icon-add-cart{
-            width: 39px;
-            height: 34px;
-            line-height: 34px;
-            background: $bg-yl;
-            border-top-left-radius: 2px;
-            border-bottom-left-radius: 2px;
-            img{
-              width: 16px;
-              height: 16px;
-            }
-          }
-          .txt-add-cart{
-            position: relative;
-            width: 100px;
-            height: 34px;
-            line-height: 34px;
-            background: $bg-red;
-            color: $cl-white;
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 2px;
-            &:after{
-              content: '';
-              position: absolute;
-              background: rgba(255, 255, 255, 0.30196078431372547);
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              opacity: 0;
-              transform: scale(1, 0.4);
-              -webkit-transition: all 0.3s;
-              -moz-transition: all 0.3s;
-              -o-transition: all 0.3s;
-              transition: all 0.3s;
-            }
-            &:hover:after{
-              opacity: 1;
-              transform: scale(1, 1);
-              -webkit-transition: all 0.3s;
-              -moz-transition: all 0.3s;
-              -o-transition: all 0.3s;
-              transition: all 0.3s;
-            }
-          }
-        }
-      }
-    }
+  .title-box-st{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 34px;
     @include mobile{
-      margin-bottom: 25px;
+      margin-bottom: 27px;
     }
-  }
-  .view-more{
-    a{
-      display: block;
-      width: 138px;
-      height: 42px;
-      line-height: 42px;
-      @include setup-text(12px,700);
-      text-align: center;
-      border: 1px solid $cl-white;
-      margin: 0 auto 40px auto;
-      -webkit-transition: all 0.4s;
-      -moz-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s;
-      &:hover{
-        background: $bg-red;
-        border: 1px solid $cl-red;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+    .title-st{
+      color: $cl-black-0;
+      font-size: 21px;
+      line-height: 25px;
+      margin: 0;
+      text-transform: uppercase;
+      @include mobile-horizontal{
+        font-size: 21px;
       }
       @include mobile{
-        margin-bottom: 25px;
+        font-size: 18px;
+      }
+    }
+    a{
+      font-size: 12px;
+      color: #6d6d6d;
+      &:hover{
+        color: $cl-blue;
+      }
+    }
+  }
+
+  .item-auction-block{
+    margin-bottom: 18px;
+    background: $bg-white;
+    padding: 23px 32px 26px 26px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    @include tablet{
+      padding: 20px;
+    }
+    .auction-group-element{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      .name-auction{
+        font-size: 16px;
+        line-height: 19px;
+        color: $cl-blue;
+        @include mobile-horizontal{
+          font-size: 15px;
+        }
+      }
+      .view-detail{
+        font-size: 12px;
+        line-height: 14px;
+        color: #6d6d6d;
+        &:hover{
+          color: $cl-blue;
+        }
+      }
+    }
+    .item-auction-modi{
+      li{
+        float: left;
+        margin-right: 39px;
+        @include tablet{
+          width: 50%;
+          margin-right: 0;
+        }
+        span{
+          display: block;
+          color: #1e1e1e;
+          max-width: 230px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        span:first-child{
+          color: $cl-smoke-75;
+          margin-bottom: 8px;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      li:last-child{
+        margin-right: 0;
+        @include tablet{
+          width: 100%;
+          margin-top: 11px;
+        }
       }
     }
   }
 }
-//end st-retaurant-menu
-
-.st-gallary-img{
-  padding-bottom: 34px;
-  .row-libs{
-    margin: 0 -3px;
-    .col-libs{
-      float: left;
-      width: 25%;
-      padding: 0 3px;
-      a{
-        display: block;
-        margin-bottom: 6px;
-        position: relative;
-        &:before{
-          @include resize-before(65%);
-        }
-        img{
-          @include resize-img;
-        }
+@include mobile-horizontal{
+  .col-custom-70{
+    width: 100%;
+  }
+  .section-add-auction{
+    .form-enter-infoinsert{
+      .col-cs-4{
+        width: 100%;
       }
-      @include mobile-horizontal{
-        width: 50%;
+      .col-cs-8{
+        width: 100%;
+      }
+    }
+
+  }
+}
+.head-insert-auction{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 32px 32px 34px;
+  margin-bottom: 11px;
+  background: $bg-white;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  @include mobile{
+    display: block;
+    padding: 25px 25px;
+  }
+  h2.title-insert-auction{
+    font-size: 16px;
+    line-height: 19px;
+    color: $cl-blue;
+    text-transform: uppercase;
+    margin: 0;
+    @include mobile{
+      margin-bottom: 11px;
+    }
+  }
+  .choose-noti-auction{
+    position: relative;
+    .btn-choose-noti{
+      width: 462px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 6px 25px 9px;
+      color: $cl-black-21;
+      border: 1px solid $cl-ddd;
+      background: $bg-white;
+      text-align: left;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      outline: none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      appearance:none;
+      @include tablet-horizontal{
+        width: 350px;
+      }
+      @include tablet{
+        width: 200px;
       }
       @include mobile{
         width: 100%;
       }
     }
+    .caret{
+      position: absolute;
+      top: 14px;
+      right: 16px;
+    }
   }
+}
+.item-sidebar-suggestion{
   @include mobile-horizontal{
-    padding-bottom: 20px;
+    display: none;
   }
-}
-
-//end st-gallary-img
-
-.st-video{
-  background: url("../images/bg-video.png") no-repeat center center;
-  background-size: cover;
-  padding-bottom: 30px;
-  h2.title-home{
-    color: $cl-white;
-    background-image: url("../images/bg-line-light.png");
-  }
-  .iframe-big{
-    height: 300px;
-    border: none;
-  }
-  p{
-    line-height: 20px;
-    color: $cl-white;
-  }
-  p.intro-eating{
-    margin-top: 25px;
-    @include mobile{
-      margin-top: 15px;
+  &>li{
+    display: block;
+    padding: 22px 13px 25px;
+    background: $bg-white;
+    margin-bottom: 9px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    @include tablet{
+      padding: 11px 13px 16px;
     }
-  }
-  .iframe-small{
-    height: 150px;
-    border: none;
-  }
-}
-
-//end st-video
-
-.st-feedback-patern{
-  .img-fb-block{
-    display: flex;
-    align-items: center;
-    margin-bottom: 25px;
-    .box-img-fb{
-      position: relative;
-      width: 170px;
-      height: 170px;
-      margin-right: 33px;
-      &:before{
-        @include resize-before(100%)
-      }
-      img{
-        @include resize-img;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
+    .name-auction-sug{
+      margin-top: 0;
+      margin-bottom: 17px;
+      a{
+        font-size: 16px;
+        line-height: 19px;
+        color: $cl-blue;
       }
     }
-    h3{
-      margin: 0;
-      font-size: 13px;
-      font-style: italic;
-      span{
-        @include setup-text(16px,700);
-        color: $cl-black;
-        display: block;
-        margin-bottom: 11px;
-        font-style: normal;
+    ul{
+      li{
+        float: left;
+        margin-right: 49px;
+        span{
+          display: block;
+          margin-bottom: 8px;
+          color: $cl-smoke-75;
+          max-width: 150px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        span:last-child{
+          margin-bottom: 0;
+          color: #1e1e1e;
+        }
+        @include tablet{
+          float: unset;
+        }
       }
-    }
-    @include mobile-horizontal{
-      justify-content: center;
-      margin-bottom: 15px;
-      .box-img-fb{
-        width: 130px;
-        height: 130px;
-      }
-    }
-  }
-  p.content-fb{
-    line-height: 24px;
-    font-size: 12px;
-  }
-}
-
-//end st-feedback-patern
-
-.st-news{
-  margin-bottom: 40px;
-  @include mobile{
-    margin-bottom: 30px;
-  }
-  h2.title-home{
-    position: relative;
-    background: none;
-    margin-bottom: 0;
-    padding-bottom: 34px;
-    &:before{
-      content: url("../images/line-left.png");
-      position: absolute;
-      top: -10px;
-      left: 262px;
-      @include tablet-horizontal{
-        left: 162px;
-      }
-      @include tablet{
-        left: 62px;
-      }
-      @include mobile-horizontal{
-        left: 0;
-        top: -7px;
-      }
-      @include mobile{
-        display: none;
-      }
-    }
-    &:after{
-      content: url("../images/line-right.png");
-      position: absolute;
-      top: -10px;
-      right: 262px;
-      @include tablet-horizontal{
-        right: 162px;
-      }
-      @include tablet{
-        right: 62px;
-      }
-      @include mobile-horizontal{
-        right: 0;
-        top: -7px;
-      }
-      @include mobile{
-        display: none;
-      }
-    }
-    @include mobile-horizontal{
-      padding-bottom: 12px;
-    }
-  }
-  .news-block{
-    margin-bottom: 38px;
-    a.img-news{
-      display: block;
-      position: relative;
-      overflow: hidden;
-      &:before{
-        @include resize-before(58%)
-      }
-      img{
-        @include resize-img;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-        &:hover{
-          transform: scale(1.1);
-          opacity: 0.8;
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -o-transition: all 0.4s;
-          transition: all 0.4s;
+      li:last-child{
+        margin-right: 0;
+        @include tablet{
+          margin-top: 15px;
         }
       }
     }
-    h3.link-news{
-      @include setup-text(13px,700);
-      @include transform-up;
-      line-height: 22px;
-      margin-top: 12px;
-      margin-bottom: 15px;
-      a{
-        display: block;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        white-space: normal;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 2;
-        display: -webkit-box;
-        max-height: 42px;
+  }
+
+}
+.form-enter-infoinsert{
+  padding: 30px 34px 24px;
+  background: $bg-white;
+  margin-bottom: 11px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  @include mobile{
+    padding: 25px;
+  }
+  .title-heading{
+    margin-bottom: 20px;
+  }
+
+  .selects-condition{
+    margin-top: 6px;
+    .btn-condition{
+      display: block;
+      height: 35px;
+      text-align: left;
+      border: 1px solid $cl-3f4;
+      color: $cl-black-21;
+      padding: 0 41px;
+      margin-bottom: 11px;
+      background: $bg-white;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      -webkit-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      -ms-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+      outline: none;
+      @include mobile-horizontal{
+        width: 100%;
       }
-    }
-    .time-news{
-      margin-bottom: 18px;
-      span{
-        font-size: 12px;
-        color: #5a5a5a;
-      }
-    }
-    p.intro-news{
-      padding-top: 12px;
-      border-top: 1px solid #d9d9d9;
-      color: #777;
-      line-height: 22px;
-      overflow: hidden;
-      -webkit-box-orient: vertical;
-      white-space: normal;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 4;
-      display: -webkit-box;
-      max-height: 101px;
-    }
-    @include mobile-horizontal{
-      margin-bottom: 25px;
-      h3.link-news{
-        margin-bottom: 12px;
-      }
-      .time-news{
-        margin-bottom: 12px;
+      @include mobile{
+        height: 60px;
+        line-height: 20px;
       }
     }
   }
-  .view-more-news{
-    a{
-      display: block;
-      width: 230px;
-      height: 42px;
-      line-height: 42px;
-      text-align: center;
-      @include setup-text(12px,700);
-      color: $cl-black;
-      border: 1px solid $cl-black;
-      margin: 0 auto;
-      -webkit-transition: all 0.4s;
-      -moz-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s;
-      &:hover{
 
-        border: 1px solid $cl-red;
-        color: $cl-white;
-        background: $bg-red;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
+}
+.exit-accept{
+  text-align: right;
+  margin-top: 2px;
+  margin-bottom: 64px;
+  @include tablet-horizontal{
+    margin-bottom: 20px;
+  }
+  .btn-main-out{
+    width: 164px;
+    height: 35px;
+    color: $cl-white;
+    background: #a3a3a3;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    margin-left: 2px;
+  }
+  .btn-accept{
+    background: $bg-blue;
+  }
+}
+  .form-enter-infoinsert{
+    .title-heading-rp{
+      color: #2828B2;
+      text-transform: uppercase;
+      margin-top: 6px;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    ul.dropdown-form-rp{
+      li.item-form-rp{
+        color: #474747;
+        //padding: 13px 0;
+        .name-rp{
+          padding: 13px 5px;
+          border-bottom: 1px solid $cl-black;
+          cursor: pointer;
+          svg{
+            margin-right: 12px;
+            vertical-align: middle;
+          }
+          svg.minus-line{
+            display: none;
+          }
+        }
+        ul.nav-form-rp{
+          padding: 5px 25px;
+          li{
+            padding: 19px 0;
+            a{
+              &:hover{
+                color: $cl-blue;
+                border-bottom: 1px solid #282828;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+.section-report-auction {
+  margin-bottom: 17px;
+  @include mobile-horizontal{
+    .form-enter-infoinsert{
+      padding: 25px;
+      .dropdown-form-rp{
+        li.item-form-rp ul.nav-form-rp{
+          li{
+            padding: 11px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-pay-auction{
+  @include mobile-horizontal{
+    .col-cs-4{
+      width: 100%;
+    }
+    .col-cs-8{
+      width: 100%;
+    }
+    .col-out-mb{
+      display: none;
+    }
+  }
+  @include mobile{
+    .form-enter-infoinsert{
+      padding: 25px;
+    }
+  }
+  .money-available{
+    background: #EAEAEA;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px 0 18px;
+  }
+  .form-enter-infoinsert.pay-add-col{
+    padding-bottom: 17px;
+    .title-heading-rp{
+      margin-bottom: 20px;
+
+    }
+    .col-cs-4,.col-cs-8{
+      margin-bottom: 17px;
+    }
+  }
+  .form-enter-infoinsert{
+    padding-bottom: 34px;
+    .tab-content-box{
+      margin-top: 19px;
+      .nav-tabs{
+        border-bottom: 0;
+        li{
+          float: left;
+          @include tablet{
+            width: 50%;
+          }
+          a{
+            border: 1px solid #000095;
+            width: 257px;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            padding: 0;
+            color: $cl-blue;
+            margin-right: 0;
+            @include tablet{
+              width: 100%;
+            }
+            &:hover{
+              background: $bg-white;
+            }
+            i{
+              padding: 0 0 0 6px;
+              font-size: 12px;
+            }
+          }
+        }
+        li.active{
+          a{
+            background: $bg-blue;
+            color: $cl-white;
+            border: 1px solid $cl-blue;
+          }
+        }
+        li:first-child{
+          a{
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+          }
+
+        }
+        li:last-child{
+          a{
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+        }
+      }
+      .tab-content{
+        margin-top: 14px;
+        p.note{
+          padding: 0 5.5px;
+        }
+        @include tablet{
+          p.note{
+            line-height: 19px;
+          }
+        }
+        .btn-calculate{
+          background: $bg-blue;
+          color: $cl-white;
+          text-align: center;
+        }
+        .col-cs-4,.col-cs-8,.col-cs-12{
+          margin-bottom: 17px;
+        }
+      }
+    }
+  }
+  .utility-selects{
+    margin-bottom: 52px;
+    @include mobile-horizontal{
+      margin-bottom: 30px;
+    }
+    @include mobile{
+      .uti-left{
+        width: 100%;
+        .btn-main-pay-look{
+          width: 100%;
+          margin-bottom: 11px;
+          margin-right: 0;
+        }
+      }
+    }
+    .btn-main-pay-look{
+      margin-right: 7px;
+      @include tablet{
+        width: 163px;
+      }
+      @include mobile-horizontal{
+        width: 149px;
+      }
+    }
+    .uti-right{
+      @include mobile{
+        width: 100%;
+        .btn-main-pay-look{
+          width: 100%;
+        }
+      }
+      .btn-main-pay-look{
+        margin-right: 0;
+        background: #a3a3a3;
+
+      }
+    }
+  }
+}
+@include mobile{
+  .section-search-auction{
+    .form-enter-infoinsert.pay-add-col{
+      padding-bottom: 20px;
+      .col-cs-4{
+        width: 100%;
+      }
+    }
+  }
+}
+.section-search-auction{
+  .form-enter-infoinsert{
+    padding-bottom: 34px;
+    .utility-selects{
+      margin-top: 4px;
+      @include mobile-horizontal{
+
+        .btn-main-pay-look{
+          width: 129px;
+        }
+      }
+      @include mobile{
+        .uti-left{
+          width: 100%;
+        }
+        .uti-right{
+          width: 100%;
+        }
+        .btn-main-pay-look{
+          width: 100%;
+          margin-bottom: 11px;
+        }
+      }
+    }
+    .search-box{
+      padding-bottom: 20px;
+      .search-box-detail{
+        display: flex;
+        align-items: center;
+        span{
+          color: $cl-black-0;
+        }
+      }
+    }
+
+  }
+
+  .form-info-auction-block{
+
+    background: $bg-white;
+    margin-bottom: 62px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    @include mobile{
+      margin-bottom: 20px;
+    }
+    .title-auction-search{
+      margin: 0;
+      padding: 20px 34px;
+      font-size: 16px;
+      line-height: 19px;
+      color: $cl-blue;
+      text-transform: uppercase;
+      @include mobile{
+        padding: 20px 25px;
+      }
+    }
+  }
+  .table-content-wrap{
+    @include tablet{
+      overflow: auto;
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $bg-blue;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: $bg-blue;
+      }
+      .table-content{
+        width: 950px;
+      }
+    }
+    .table-content{
+      padding: 0 34px;
+      position: relative;
+      @include mobile{
+        padding: 0 11px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        background: #EBEBFC;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 53px;
+        border-bottom: 0.5px solid #a3a3a3;
+
+        @include tablet-horizontal{
+          height: 68px;
+        }
+        @include mobile{
+          height: 54px;
+        }
+      }
+      .tbl-info-auction{
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        thead{
+          tr{
+            th{
+              padding: 18px 17px;
+              color: $cl-blue;
+              font-weight: 400;
+              @include mobile{
+                padding: 11px 17px;
+              }
+            }
+          }
+        }
+        tbody{
+          tr{
+            border-bottom: 0.5px solid #a3a3a3;
+            td{
+              color: #3d3d3d;
+              padding: 18px 17px;
+              @include mobile{
+                padding: 11px 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .number-record{
+    padding: 20px 56px 34px 45px;
+    @include mobile{
+      padding: 20px 25px;
+    }
+    .txt-number-record{
+      color: $cl-smoke-75;
+      font-size: 12px;
+    }
+    .number-page{
+      button{
+        border: none;
+        background: $bg-white;
+        color: $cl-smoke-75;
+        padding: 0 3px;
+      }
+      button.active{
+        color: $cl-blue;
       }
     }
   }

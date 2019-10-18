@@ -1,30 +1,4 @@
 $( document ).ready(function() {
-
-    $("#back-to-top").click(function () {
-        $("html, body").animate({scrollTop : 0},"slow");
-        return false;
-    });
-    $(window).scroll(function () {
-        if ($(window).scrollTop() >=300) {
-            $('#back-to-top').show();
-        }
-        else {
-            $('#back-to-top').hide();
-        }
-    });
-    $('.img-prod').viewbox();
-    $('.img-prod-libs').viewbox();
-
-    var vb = $('#popup').viewbox();
-    $('.popup-open-button').click(function(){
-        vb.trigger('viewbox.open');
-    });
-    $('.close-button').click(function(){
-        vb.trigger('viewbox.close');
-    });
-
-    // begin js menumb
-
     var html = $('html, body'),
         navmenu = $('.menu'),
         navToggle = $('.nav-toggle'),
@@ -44,7 +18,7 @@ $( document ).ready(function() {
     overlay.click(function(){
         navToggle.trigger('click');
     });
-    $(".nav-dropdown").hide();
+    // $(".nav-dropdown").hide();
     navDropdownToggle.on('click', function() {
         var $this = $(this);
         $(".nav-dropdown").slideUp();
@@ -60,53 +34,51 @@ $( document ).ready(function() {
     });
 
     // end menumb
-});
-if (window.innerWidth > 768) {
+
+    $('.btn-condition').click(function () {
+        $('.btn-condition').removeClass('active');
+        $(this).addClass('active');
+    });
+
+    $("ul.nav-form-rp").hide();
+    $(".name-rp").click(function(){
+        $('.name-rp').removeClass('rotate-down');
+
+        $("ul.nav-form-rp").slideUp();
+        if(!$(this).next().is(":visible"))
+        {
+            $(this).next().slideDown();
+            $(this).addClass('rotate-down');
+        }
+
+    });
+    $("#back-to-top").click(function () {
+        $("html, body").animate({scrollTop : 0},"slow");
+        return false;
+    });
     $(window).scroll(function () {
-        if ($(window).scrollTop() >= 840) {
-            $('#main-nav').addClass('fixed');
-        } else {
-            $('#main-nav').removeClass('fixed');
+        if ($(window).scrollTop() >=300) {
+            $('#back-to-top').show();
+        }
+        else {
+            $('#back-to-top').hide();
         }
     });
-}
+    if (window.innerWidth > 768) {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 300) {
+                $('#main-nav').addClass('fixed');
+            } else {
+                $('#main-nav').removeClass('fixed');
+            }
+        });
+    }
+});
 $(function() {
-    $(".slider-fb").owlCarousel({
-        items: 3,
-        responsive: {
-            1200: { item: 3, },// breakpoint from 1200 up
-            982: { items: 3, },
-            768: { items: 2, },
-            480: { items: 1, },
-            0: { items: 1, }
-        },
-        rewind: false,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true,
-        smartSpeed: 500, //slide speed smooth
-
-        dots: false,
-        dotsEach: false,
-        loop: true,
-        nav: true,
-        navText: ['', ''],
-        // navSpeed: 250, //slide speed when click button
-
-        autoWidth: false,
-        margin: 30,
-
-        lazyContent: false,
-        lazyLoad: false,
-
-        animateIn: false,
-        animateOut: false,
-
-        center: false,
-        URLhashListener: false,
-
-        video: false,
-        videoHeight: false,
-        videoWidth: false,
+    $('input[name="daterange"]').daterangepicker({
+        opens: 'left'
+    }, function(start, end, label) {
+        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
     });
 });
+

@@ -2,190 +2,368 @@
 // Layout :: Navigation
 // ======================================================
 
+//#main-nav{
+//  .logo{
+//    h1{
+//      margin: 13px 0 25px;
+//    }
+//  }
+//  ul.menu{
+//    li{
+//      position: relative;
+//      display: inline-block;
+//      margin: 40px 0;
+//      a{
+//        color: $cl-green;
+//        font-weight: 700;
+//        padding: 20px 18px;
+//        display: block;
+//      }
+//    }
+//    .has-dropdown{
+//      &:after{
+//        content: "\f0dd";
+//        position: absolute;
+//        top: 20px;
+//        right: 7px;
+//        color: $cl-green;
+//        font: normal normal normal 14px/1 fontawesome;
+//        -webkit-transition: all 0.4s;
+//        -moz-transition: all 0.4s;
+//        -ms-transition: all 0.4s;
+//        -o-transition: all 0.4s;
+//        transition: all 0.4s;
+//      }
+//    }
+//    .search{
+//      display: inline-block;
+//      margin: 40px 0 40px 18px;
+//      width: 60px;
+//      height: 60px;
+//      line-height: 60px;
+//      text-align: center;
+//      background: $bg-green;
+//      border-radius: 50%;
+//      -moz-border-radius: 50%;
+//      -webkit-border-radius: 50%;
+//      -ms-border-radius: 50%;
+//      -o-border-radius: 50%;
+//      img{
+//        text-align: center;
+//      }
+//    }
+//  }
+//
+//}
+
+
 #main-nav{
-  background: $bg-red;
   .logo{
     h1{
-      margin: 9px 0;
-      img{
-        @include tablet-horizontal{
-          height: 40px;
-        }
-      }
-      @include tablet-horizontal{
-        margin: 7px 0 9px;
-      }
+      font-size: unset;
+      margin: 15px 0 12px;
     }
   }
-  ul.menu{
-    &>li{
-      float: left;
-      position: relative;
-      &:hover >a:before{
-        transform: scale(1);
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-      }
-      &:hover >a{
-        color: $cl-yl;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-      }
-      &>a{
-        display: block;
-        @include transform-up;
-        @include setup-text(13px,700);
-        padding: 35px 22px;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-        &:before{
-          content: '';
-          position: relative;
-          top: -35px;
-          width: 100%;
-          height: 2px;
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -o-transition: all 0.4s;
-          transition: all 0.4s;
-          background: $bg-yl;
-          display: block;
-          transform: scale(0);
-          -webkit-transition: all 0.4s;
-          -moz-transition: all 0.4s;
-          -o-transition: all 0.4s;
-          transition: all 0.4s;
-          @include tablet-horizontal{
-            display: none;
-          }
-        }
-        &:after{
-          content: '';
-          position: absolute;
-          left: 12px;
-          top: 41px;
-          width: 4px;
-          height: 4px;
-          background: $bg-white;
-          border-radius: 50%;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
-          @include tablet-horizontal{
-            display: none;
-          }
-        }
-        @include tablet-horizontal{
-          padding-top: 15px;
-          padding-bottom: 15px;
-        }
-      }
-      @include tablet-horizontal{
+  .utiliti{
+    .menu{
+      display: inline-block;
+      @include mobile{
         width: 100%;
       }
-    }
-    .has-dropdown{
-      &:after{
-        content: "\f0dd";
-        position: absolute;
-        top: 35px;
-        right: 8px;
-        color: $cl-white;
-        font: normal normal normal 14px/1 fontawesome;
-        -webkit-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -ms-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        transition: all 0.4s;
-        @include tablet-horizontal{
-          top: 12px;
-          right: 18px;
+      &>li{
+        position: relative;
+        display: inline-block;
+        &:hover >a:before{
+          transform: scale(1);
+          -webkit-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          transition: all 0.4s;
         }
-      }
-      ul.nav-dropdown{
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 300px;
-        box-shadow: 0 0 4px hsla(0, 0%, 0%, 0.15);
-        z-index: 99;
-        li{
+        &:hover >a{
+          color: $cl-blue;
+        }
+        &>a{
           display: block;
-          border-bottom: 1px solid transparent;
-          a{
-            padding: 10px 10px;
+          color: $cl-black-0;
+          padding: 24px 17px 23px 35px;
+          &:before{
+            content: '';
+            position: relative;
+            top: 39px;
+            width: 100%;
+            height: 4px;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+            background: $bg-blue;
             display: block;
-            background: $bg-white;
+            transform: scale(0);
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            transition: all 0.4s;
+          }
+          @include tablet{
+            color: $cl-white;
+            padding: 16px 17px 18px 15px;
             &:hover{
-              background: rgba(231, 39, 45, 0.74);
               color: $cl-white;
             }
           }
         }
-        @include tablet-horizontal{
-          position: relative;
+        @include tablet{
           display: block;
+          border-bottom: 1px solid #4c4cb8;
+          &:hover a{
+            color: $cl-white;
+          }
         }
       }
-      &:hover{
-        ul.nav-dropdown{
-          display: block;
-        }
-      }
-      @include tablet-horizontal{
+      .has-dropdown{
         a{
+          padding-left: 18px;
+          padding-right: 18px;
+          @media (max-width: 1199px) and (min-width: 992px) {
+            padding-left: 12px;
+            padding-right: 12px;
+          }
+          i{
+            vertical-align: top;
+            line-height: 11px;
+            margin-left: 9px;
+            margin-right: 6px;
+            @include tablet{
+              position: absolute;
+              top: 19px;
+              right: 14px;
+            }
+          }
+          @include tablet{
+            display: inline-block;
+          }
+        }
+        ul.nav-dropdown{
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          top: 200%;
+          left: 18px;
+          width: 300px;
+          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          z-index: 99;
+          -webkit-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          transition: all 0.4s;
+          @include tablet{
+            display: none;
+            -webkit-transition: all 0s;
+            -moz-transition: all 0s;
+            -o-transition: all 0s;
+            transition: all 0s;
+          }
+          @media (max-width: 1199px) and (min-width: 992px) {
+            left: 14px;
+          }
+          li{
+            border-bottom: 1px solid transparent;
+            a{
+              display: block;
+              background: #6e6ec7;
+              padding: 11px 11px;
+              color: #fff;
+              border-bottom: 1px solid transparent;
+              &:hover{
+                background: #4c4cd9;
+              }
+              @include tablet{
+                background: #4c4cd9;
+              }
+            }
+          }
+          li:last-child{
+            @include tablet{
+              border-bottom: none;
+            }
+          }
+          @include tablet{
+            opacity: 1;
+            visibility: visible;
+            top: 100%;
+            position: relative;
+            left: 0;
+            width: 100%;
+            box-shadow: none;
+          }
+        }
+        &:hover ul.nav-dropdown{
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+          -webkit-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          transition: all 0.4s;
+          @include tablet{
+            -webkit-transition: all 0s;
+            -moz-transition: all 0s;
+            -o-transition: all 0s;
+            transition: all 0s;
+          }
+        }
+      }
+    }
+    .user-manager{
+      display: inline-block;
+      .user-manager-block{
+        display: flex;
+        align-items: flex-end;
+        svg{
           display: inline-block;
         }
-        ul.nav-dropdown{
-          width: 100%;
-          box-shadow: none;
-          li{
-            a{
-              background: #e53a3f;
-              color: $cl-white;
-              padding-left: 22px;
-            }
+        .icon-user{
+          margin-right: 5px;
+        }
+        .icon-log-out{
+          margin-left: 5px;
+        }
+        .name-user{
+          display: inline-block;
+          line-height: 12px;
+          &:hover{
+            color: $cl-blue;
           }
         }
       }
-    }
-    .shopping-cart{
-      float: left;
-      margin: 32px 0;
-      a{
-        display: block;
-        position: relative;
-        span{
-          position: absolute;
-          top: -8px;
-          right: -9px;
-          height: 18px;
-          width: 18px;
-          background: $bg-yl;
-          @include setup-text(12px,400);
-          color: #373435;
-          text-align: center;
-          border-radius: 50%;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
-        }
+      @include tablet{
+        position: fixed;
+        top: 22px;
+        right: 92px;
       }
-      @include tablet-horizontal{
-        margin: 15px 24px;
+    }
+    .notification{
+      display: inline-block;
+      padding-right: 7px;
+      position: relative;
+      margin-left: 40px;
+      .number-noti{
+        display: block;
+        position: absolute;
+        top: -1px;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        font-size: 9px;
+        line-height: 10px;
+        background: #E42529;
+        color: $cl-white;
+        text-align: center;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+      @include tablet{
+        position: fixed;
+        top: 23px;
+        right: 54px;
       }
     }
   }
-  @include tablet-horizontal{
+  @include tablet{
+    background: $bg-white;
+    box-shadow: 0 0 0 2px #eee;
+    -webkit-box-shadow: 0 0 0 2px #eee;
+  }
+}
+
+
+.nav-toggle {
+  line-height: 1;
+  display: inline-block;
+  padding: 2px;
+  border: 0;
+  right: 5px;
+  background: transparent;
+  width: 40px;
+  height: 50px;
+  position: fixed;
+  z-index: 99;
+  outline: none;
+  visibility: hidden;
+  top: 4px;
+  .icon-menu {
+    position: relative;
+    display: inline-block;
+    width: 23px;
+    height: 17px;
+    vertical-align: middle;
+    fill: none;
+    .line-1 {
+      top: 0;
+    }
+    .line {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 3px;
+      -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      background-color: $bg-blue;
+    }
+    .line-2 {
+      top: 50%;
+      margin-top: -1.5px;
+    }
+    .line-3 {
+      bottom: 0;
+    }
+  }
+}
+.is-active .icon-menu .line-1 {
+  -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
+  -ms-transform: translateY(7px) translateX(0) rotate(45deg);
+  transform: translateY(7px) translateX(0) rotate(45deg);
+}
+.is-active .icon-menu .line-2 {
+  opacity: 0;
+}
+.is-active .icon-menu .line-3 {
+  -webkit-transform: translateY(-7px) translateX(0) rotate(-46deg);
+  -ms-transform: translateY(-7px) translateX(0) rotate(-46deg);
+  transform: translateY(-7px) translateX(0) rotate(-46deg);
+}
+
+.has-dropdown.is-active:after{
+  transform: rotateX(180deg) translateY(-6px);
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+@include tablet{
+  .overlay {
+    position: fixed;
+    z-index: 9;
+    display: none;
+    background: rgba(19, 39, 57, 0.8);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  #main-nav{
     position: fixed;
     width: 100%;
     top: 0;
@@ -199,131 +377,36 @@
       visibility: visible;
     }
   }
-}
-
-//begin menumb
-.nav-toggle {
-  position: fixed;
-  display: inline-block;
-  top: 4px;
-  right: 5px;
-  width: 40px;
-  height: 50px;
-  background: transparent;
-  padding: 2px;
-  border: 0;
-  z-index: 99;
-  outline: none;
-  visibility: hidden;
-  line-height: 1;
-  .icon-menu {
-    position: relative;
-    width: 23px;
-    height: 17px;
-    display: inline-block;
-    vertical-align: middle;
-    fill: none;
-    .line-1 {
-      top: 0;
-    }
-    .line {
-      position: absolute;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 3px;
-      background-color: $bg-white;
-      -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-      -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-      transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-    }
-    .line-2 {
-      top: 50%;
-      margin-top: -1.5px;
-    }
-    .line-3 {
-      bottom: 0;
-    }
-  }
-}
-.is-active{
-  .icon-menu{
-    .line-1{
-      -webkit-transform: translateY(7px) translateX(0) rotate(45deg);
-      -ms-transform: translateY(7px) translateX(0) rotate(45deg);
-      transform: translateY(7px) translateX(0) rotate(45deg);
-    }
-    .line-2{
-      opacity: 0;
-    }
-    .line-3{
-      -webkit-transform: translateY(-7px) translateX(0) rotate(-46deg);
-      -ms-transform: translateY(-7px) translateX(0) rotate(-46deg);
-      transform: translateY(-7px) translateX(0) rotate(-46deg);
-    }
-  }
-}
-.has-dropdown.is-active:after{
-  transform: rotateX(180deg) translateY(-6px);
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
-}
-@include tablet-horizontal{
-  .overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9;
-    display: none;
-    background: rgba(19, 39, 57, 0.8);
-    cursor: pointer;
-  }
-  .nav-dropdown{
-    display: block;
-  }
-
   .menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
     width: 300px;
+    overflow-x: hidden;
+    background: #2828b2;
+    padding-bottom: 100px;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    z-index: 9999;
+    overflow-y: auto;
+    visibility: hidden;
     max-width: 70%;
     height: 100%;
     margin: 0;
-    background: $bg-red;
-    padding-bottom: 100px;
-    visibility: hidden;
-    overflow-x: hidden;
-    overflow-y: auto;
     -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
     -webkit-overflow-scrolling: touch;
-    z-index: 9999;
-    @include mobile{
-      width: 100%;
-    }
     &.is-visible {
       visibility: visible;
       width: 350px;
       max-width: 100%;
-      height: 100%;
       border-top: 1px solid #d06568;
+      height: 100%;
       overflow: auto;
       -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
       transform: translateX(0);
-      @include mobile{
-        width: 100%;
-      }
     }
   }
 }
