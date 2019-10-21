@@ -172,6 +172,9 @@
       -webkit-border-radius: 30px;
       -ms-border-radius: 30px;
       -o-border-radius: 30px;
+      &:hover{
+        background: rgba(92, 92, 213, 0.9803921568627451);
+      }
       @include tablet{
         width: 25%;
         float: left;

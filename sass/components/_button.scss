@@ -122,4 +122,13 @@ input[name="datenormal"]::-webkit-calendar-picker-indicator {
   -webkit-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
+
+}
+a#back-to-top:hover{
+  background: rgba(40, 40, 178, 0.68)!important;
+}
+.btn-calculate{
+  background: $bg-blue;
+  color: $cl-white;
+  text-align: center;
 }

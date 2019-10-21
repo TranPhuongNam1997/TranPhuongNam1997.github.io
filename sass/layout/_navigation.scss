@@ -149,10 +149,13 @@
           visibility: hidden;
           position: absolute;
           top: 200%;
-          left: 18px;
-          width: 300px;
-          -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          left: -50%;
+          width: 186px;
+          padding: 6px 23px 15px 22px;
+          transform: translateX(12%);
+          -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.14);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.14);
+          background: $bg-white;
           z-index: 99;
           -webkit-transition: all 0.4s;
           -moz-transition: all 0.4s;
@@ -172,19 +175,26 @@
             border-bottom: 1px solid transparent;
             a{
               display: block;
-              background: #6e6ec7;
-              padding: 11px 11px;
-              color: #fff;
-              border-bottom: 1px solid transparent;
+              padding: 14px 0 13px;
+              color: $cl-black-0;
+              border-bottom: 1px solid #efefef;
+              transition: all 0.4s;
+              font-size: 12px;
               &:hover{
-                background: #4c4cd9;
+                padding-left: 10px;
+                transition: all 0.4s;
+                color: $cl-blue;
               }
               @include tablet{
                 background: #4c4cd9;
               }
             }
+
           }
           li:last-child{
+            a{
+              border-bottom: 0;
+            }
             @include tablet{
               border-bottom: none;
             }
@@ -202,7 +212,7 @@
         &:hover ul.nav-dropdown{
           opacity: 1;
           visibility: visible;
-          top: 100%;
+          top: 85%;
           -webkit-transition: all 0.4s;
           -moz-transition: all 0.4s;
           -o-transition: all 0.4s;
@@ -236,6 +246,9 @@
           &:hover{
             color: $cl-blue;
           }
+        }
+        .btn-logout-id{
+          line-height: 11px;
         }
       }
       @include tablet{
